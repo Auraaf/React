@@ -37,4 +37,15 @@ packing it compatible for old version
   ]
 
 
+Using all above we have created all our own creat reactApp in 
+
+React isn't making the apps fast it's, parcel that make it work efficiently 
+
+Ep 3  :
+ pt 3 : JSX is developed by fb, it's JS syntax which's easy to create React Element.
+ JSX is totally different from React, it's made to make life easier.
+ const jsxHeading = <h1>Nmste react </h1>  this is not html in js, it's jsx suyntax.
+ JSX is html or XML - like syntax.
+
+
 
