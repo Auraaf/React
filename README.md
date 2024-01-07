@@ -111,7 +111,7 @@ part 4 : React Component
         {/* another way to call component i.e. simply calling js function÷  */}
         {JsxHeading()}
 
- E4P1 : Food Ordering App
+ E4    P1 : Food Ordering App
         Thought process to have clear 
         Planning : 
         Designing : in notebook 
@@ -127,6 +127,73 @@ part 4 : React Component
         To write inline css you've to call an js object
         as in jsx you need {}  any js so 
         <div style ={ { backGround : "#f0f0f0" }}
+
+      P2 : How to make dynamic food card : 
+        Need props : properties is something which you can pass to component, dynamically.
+
+        It's just as normal as arguments to function.
+        props are js object, so we need {} to read it.
+
+        destucturing on the fly, unwrap in 
+        const {resName, cuisine} = props ;
+        Not a react, just a js power .
+         ResCard = ({resName, cuisine})
+
+        Data comes in 
+
+        Config driven UI : UI is driven by config, api data is config, if something is present in data we'll show else we can skip that.
+
+        For eg in swiggy there's offer in Delhi, Mumbai but not in Bhopal, than we won't show offer section in Bhopal. See in this way we can control the UI according to data i.e. 
+
+        UI layer + data layer makes you good FE engineer.
+        <ResCard 
+                    restData = {restObj}
+                />
+                       
+        const ResCard = (props) => {
+        /* destucturing assignment */
+        const {restData} = props ; }
+        
+        The {} braces in the line const { restData } = props; are part of JavaScript's destructuring assignment syntax. This syntax allows you to extract specific properties from objects and assign them to variables with the same name.
+
+        In this case, props is an object that holds various properties passed to a React component. By using the destructuring assignment with { restData }, you are extracting the restData property from the props object.
+
+        Here's a breakdown:
+
+        const { restData }: This declares a constant variable named restData.
+
+        = props;: This part of the statement assigns the value of props.restData to the newly declared variable restData.
+
+        Map in js <div className="restaurant-list">
+
+                {
+                    restaurantList.map ( (restaurant) => (
+                        <ResCard restData = {restaurant} />
+                    ))
+                }
+                
+            
+            </div>
+
+        ***Warning: Each child in a list should have a unique "key" prop  
+        With above implementation got this warning, for that we can restaurant id present with data.
+
+         <ResCard  key = {restaurant.data.id} restData = {restaurant} /> 
+
+         Always give key when doing map, and have a unique id attached to it.
+
+         Why we need keys : 
+         Read in copy 
+
+         Bad practise to use index as key, read article. 
+         Best practice to use unique Id as key. 
+         restaurantList.map ( (restaurant , index ) => (
+                        <ResCard  key = {index} restData = {restaurant} />
+                    ))
+        
+
+
+
 
 
   
