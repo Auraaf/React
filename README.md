@@ -190,6 +190,65 @@ part 4 : React Component
          restaurantList.map ( (restaurant , index ) => (
                         <ResCard  key = {index} restData = {restaurant} />
                     ))
+
+
+        E5P1 Hooks : We wrote everything in single line, to make seperate file for seperate component.
+
+        Read about react file structure 
+        either of .jsx or .js as an extension can be used 
+
+        Always export in component first, then import in main.
+
+        When you've hard coded data like restaurant list, never ever keep in component.
+        Also don't keep hard coded string.
+
+        Two type of export : Named export and default epxort 
+        Named import : {CDN_url} from ../../ 
+
+        -Default Export/Import 
+        export default Component;
+        import Component from "path" ;
+        - Named Export/Import 
+         export const Component ;
+         import {Component} from "path" ;
+
+         Can I do default and named side by side.
+
+         Try not to keep 100 line code 
+
+         E5P2 : 51:00 
+         event binding like onClick in js.
+         1:!5:52
+
+         UI Layer and data layer should be in sync i.e when data changes UI must change accordingly 
+         <button
+         onClick={  () => {
+                restaurantList =  restaurantList.filter( (res) => res.data.avgRating > 4 ) ;
+                console.log("length after click : " + restaurantList.length) ;
+                }}  > filter
+
+                </button>
+         ***button clicking you will notice console has filter data but UI still showing old unfiltered data.
+
+         To resolve this issue that data layer and ui layer remain consitent react give you super power called stateVariable, here Hooks get introduced 
+         ****Hooks are Normal js Utility function, there two imp hooks**** 
+         - useState()  - suprerpowerful state variable, it's powerful as it maintians the state of the component 
+         syntax :
+         import [useState] from "react" ;
+         const [list1] = useState([]) ; // this function return variable in form of array, passing default value [] .
+
+         to change list1, you can't do it normally you have to add setList1 function during declaration.
+         const[list1 , setList1] = useState([]) ; you can have any name to function but industry standard to use this way. 
+
+         any where you can call this function to change list1, to set list1 to filteredList.
+         for eg setList1(filteredList)
+         - useEffect()
+
+
+      
+
+
+       
         
 
 
