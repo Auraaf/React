@@ -233,7 +233,8 @@ part 4 : React Component
          To resolve this issue that data layer and ui layer remain consitent react give you super power called stateVariable, here Hooks get introduced 
          ****Hooks are Normal js Utility function, there two imp hooks**** 
          - useState()  - suprerpowerful state variable, it's powerful as it maintians the state of the component 
-         syntax :
+         syntax : ALways declare inside the main component Function body 
+          **  I declared the useState outside the function, getting error of 
          import [useState] from "react" ;
          const [list1] = useState([]) ; // this function return variable in form of array, passing default value [] .
 
@@ -243,6 +244,11 @@ part 4 : React Component
          any where you can call this function to change list1, to set list1 to filteredList.
          for eg setList1(filteredList)
          - useEffect()
+
+         **** whenever a state variable updates react re-renders(update the UI) my components****
+
+         React WOrking : https://github.com/acdlite/react-fiber-architecture  *** must read
+           destucturing { [] , [] } and [elim1 , elm 2] is later one also called destuctiuring.
 
 
       
