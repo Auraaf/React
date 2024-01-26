@@ -1,3 +1,7 @@
+---- very important repo to follow https://github.com/chetannada/Namaste-React/tree/main
+
+DOM : Documnent object model, it's a programming interface for web documents. 
+
 Ep 2 : Igniting our app 
 
 #parcel 
@@ -249,6 +253,70 @@ part 4 : React Component
 
          React WOrking : https://github.com/acdlite/react-fiber-architecture  *** must read
            destucturing { [] , [] } and [elim1 , elm 2] is later one also called destuctiuring.
+
+---------------------------------------------------------------------------------------------------------------
+        E6P1 : Monotithic and Micro service architecture.
+
+        How to get data directly from api 
+
+        Another important hook useEffect, hooks are just normal js function which has some 
+
+        useEffect : it will be called once component is completey rendered.
+        syntax : have to pass two arguments one is 1 callback function, 2 array .
+        eg useEffect ( ()=> {} , []) ;
+
+        interesting working, you'll notice 
+
+        useEffect( () => {
+         console.log("UseEffect get called ") ;
+          } , []  ) ;
+
+        console.log("Body rendered") ;
+
+          return (
+              <div className="body"> </div>
+          )
+
+          if you put break point in line useEffect line and div line you'll notice that useEffect won't run first.
+          It's div section that'll run first than 
+
+
+          Proof => console output :   Body rendered 
+                                      UseEffect get called
+
+          Fetch : will return a promise 
+          const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6126255&lng=77.04108959999999&page_type=DESKTOP_WEB_LISTING") ;
+
+          This above code create a cors error, it's created by browser which stope crosss origin accesss.
+           For that we've added the extension and turned on it. 
+
+           so we;ve used async await 
+
+           50:59 
+
+           using Spinner showing 
+           Shimmer ![Alt text](ShimmerSample.png) 
+
+            1:00:45
+           
+           flow of steps : 
+           load  -> render(useState hook could be used here to re render) -> api (useEffect get called after rendering) -> R
+
+          E6P4 :
+          shimmer UI : till the time data get rendered we show fake UI ![Alt text](ShimmerSample.png) 
+
+          E6P5 : 1:33 start from 15 min back about use State usage for changing button 
+          useState were used when wwe change when clicked change buttion value.
+          //add stateVariable and function, 
+            const [btnValue, setBtnValue] = useState('login') ;
+
+            changeBtnValue =() => {
+                setBtnValue('logout');
+            }
+
+
+
+
 
 
       
