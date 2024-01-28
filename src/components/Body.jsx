@@ -6,7 +6,7 @@ import ResCard  from "./ResCard";
 import restaurantList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 //{} used here for destucturing the object.
-import { swiggy_api_URL } from "../utils/constants"; // name should be same to property need to be extrtacted.
+import { swiggy_api_URL  , swiggy_api_URL_main} from "../utils/constants"; // name should be same to property need to be extrtacted.
 
 
 const Body = () => {
@@ -19,25 +19,29 @@ const Body = () => {
         getRestaurants();
     } , []  ) ;
 
-    // when loacl state variable i.e. searchText get chnaged react triggeres the reconciliation cycle
+    // when local state variable i.e. searchText get chnaged react triggeres the reconciliation cycle
     // which re renderes the whole component.
 
     async function getRestaurants() {
         // handle the error using try... catch
         try {   
-          const response = await fetch(swiggy_api_URL);
+          const response = await fetch(swiggy_api_URL_main);
           
           const json = await response.json() ;
           
+          console.log(json);
           // initialize checkJsonData() function to check Swiggy Restaurant data
           async function checkJsonData(jsonData) {
             for (let i = 0; i < jsonData?.data?.cards.length; i++) {
     
               // initialize checkData for Swiggy Restaurant data
               //optioonal chaining.
+              //we'll keepon checking for restaurants card, if we got restaurant card we'll return that card.
+              //using chaining.
               let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     
-              // if checkData is not undefined then return it
+              // if checkData is not undefined then return it 
+              //if restuarant not present it'll keep on giving undefined.
               if (checkData !== undefined) {
                 return checkData;
               }
@@ -49,6 +53,7 @@ const Body = () => {
           // call the checkJsonData() function which return Swiggy Restaurant data
           const resData = await checkJsonData(json);
           // update the state variable restaurants with Swiggy API data
+          console.log(resData) ;
           setRestaurantList(resData);
           setFilteredRestaurants(resData);
         } catch (error) {
@@ -91,8 +96,6 @@ const Body = () => {
                     filteredRestaurants.map ( (restaurant , index)  => {
                         
                         return (
-
-                            
                             <ResCard key = {restaurant.info.id}  restData =  {restaurant.info} />
                         )
                     } )

@@ -12,7 +12,7 @@ const ResCard = (props) => {
             />
             
             <h3>{restData?.name}</h3>
-            <h3>{restData?.cuisines}</h3>
+            <h3>{ " " + restData?.cuisines}</h3>
               
         </div>
     ) ;

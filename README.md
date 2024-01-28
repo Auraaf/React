@@ -314,6 +314,22 @@ part 4 : React Component
                 setBtnValue('logout');
             }
 
+            react is faster because it has concept of Virtual Dom, where react fibre algorithm get introduced 
+            this compares the differences b/w the virtual doms of only the changed part and then re render it 
+            efficiently.
+
+
+          E6.1 Prt 
+          congif driven UI: for eg take swiggy UI: some of the city won't have 
+
+          Ep6.2 How to make website works without cors plugin
+            making call from one domain to another domain not allowed by borwser.
+            just add crossproxy.io  it has 40 request limit. 
+          
+
+
+
+
 
 
 
