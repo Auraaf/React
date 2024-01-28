@@ -320,12 +320,12 @@ part 4 : React Component
 
 
           E6.1 Prt 
-          congif driven UI: for eg take swiggy UI: some of the city won't have 
+          config driven UI: for eg take swiggy UI: some of the city won't have 
 
           Ep6.2 How to make website works without cors plugin
             making call from one domain to another domain not allowed by borwser.
             just add crossproxy.io  it has 40 request limit. 
-
+------------------------------------------------------------------------------------------------------------------------
          Ep 7 Routing and useEffect() usability 
          useEffect( () => {
  
@@ -335,6 +335,34 @@ part 4 : React Component
          *** if dependecy array is empty => [], useEffect is called on initial render.
          *** if dependecy array contain some dependecy for eg [btnValue], then useEffect will be only when
               dependecy changes. 
+
+        useState => basic nature is to set local state variable, so declaring outside the component body will throw error. Also never use this inside if condition or for loop. it'll messes up React functionality
+
+        --->>> React Router 
+
+        //creating configuration for route  in App.js component 
+
+          const appRouter = createBrowserRouter([
+            {
+              path: "/",
+              element: <About />
+            },
+            {
+              path: "/about",
+              element: <About />
+            }
+          ]);
+
+          //once configuration created provide this configuration to router provider
+
+          root.render(<RouterProvider router={appRouter} />);
+          *** read on this site https://reactrouter.com/en/main/routers/create-browser-router
+
+          important hook get introduced that is to show Error cause by routing.
+
+          pitfall :: not importing the error component in App.js
+
+
 
           
 
