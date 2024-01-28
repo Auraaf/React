@@ -37,7 +37,7 @@ const Body = () => {
               // initialize checkData for Swiggy Restaurant data
               //optioonal chaining.
               //we'll keepon checking for restaurants card, if we got restaurant card we'll return that card.
-              //using chaining.
+              //using optional chaining.
               let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     
               // if checkData is not undefined then return it 
