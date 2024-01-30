@@ -362,6 +362,19 @@ part 4 : React Component
 
           pitfall :: not importing the error component in App.js
 
+          E7P4 : Now when we change route we wont't see header or anything, so we'll be creating 
+          children route
+          This we achieved using Oultet and children functionality
+
+          Now to navigate to new page we can use <a> tag with href, but in react never use it, as it'll load
+          the whole page, in react we can go to new page with even loading whole page.
+
+          Link to object is there provided by react-router-dom it'll change the pafe without even refreshing the whole page.
+
+          <li> <Link to ='contact' > Contact us </Link> </li>
+
+
+
 
 
           

@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
 import { CDN_URL } from "./utils/constants";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 /*
@@ -156,7 +156,12 @@ const AppLayout = () => {
     return (
         <div className="app">
             <Header/>
-            <Body/>
+
+              {/* if route '/' show body */}
+              {/* if route '/about' show about page */}
+              {/** if route '/contact' show contact page */}
+              {/** this Outlet component renderes based on route as Outlet get replaced by main component */}
+           <Outlet />
         </div>
     )
 }
@@ -167,16 +172,24 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error />
+    children:[
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path:"/contact",
+        element: <Contact /> ,
+      }
+
+    ] ,
+    errorElement: <Error />,
   },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path:"/contact",
-    element: <Contact /> 
-  }
+  
 ]);
 
 //once configuration created provide this configuration to router provider
