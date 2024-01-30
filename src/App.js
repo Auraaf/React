@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
+import RestMenu from "./components/RestMenu";
 import { CDN_URL } from "./utils/constants";
 import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
@@ -184,11 +185,15 @@ const appRouter = createBrowserRouter([
       {
         path:"/contact",
         element: <Contact /> ,
+      },
+      {
+        path:"/menu/:resId",
+        element: <RestMenu />,
       }
 
     ] ,
     errorElement: <Error />,
-  },
+  }
   
 ]);
 

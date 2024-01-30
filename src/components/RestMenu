@@ -1,0 +1,30 @@
+import { useState , useEffect } from "react";
+import { swiggy_menu_url } from "../utils/constants";
+import { useParams } from "react-router-dom";
+
+const RestMenu = () => {
+
+    const [menu, setMenu] = useState([]) ;
+    useEffect(() => {
+        fetchMenu() 
+    } , []) ;
+
+    //object destucturing
+    const {resId}= useParams() ;
+
+    async function fetchMenu() {
+        var dataJson = await fetch (swiggy_menu_url + resId) ;
+        console.log(dataJson) ;
+        setMenu(dataJson) ;
+    }  ;
+
+    return(
+        <div className="rest-menu">
+            <h1>
+                Burgers
+            </h1>
+        </div>
+    );
+};
+
+export default RestMenu ;
