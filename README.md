@@ -403,7 +403,7 @@ part 4 : React Component
             }
 ------------------------------------------------------------------------------------------------------------------------
 
-          E8P1: Class based component:
+          E8P1: Class based component:  **** this keyword has great role in it*******
           It's js class which has a render method which returns piece of jsx.
           In functional component it's the js function which return piece of jsx.
 
@@ -433,6 +433,21 @@ part 4 : React Component
           1. Create parameterized constructor
           2. Then use super command, why props required.
           3. Now you can anywhere call your props using this.props.name
+
+          props could not be replaced by any other word in class based component but in functional component 
+          we can have any other component.
+
+          E8P2 : Creating state variable in class based component.
+          Calling a class based component is something like creting a instance of that class and when class is
+          invocked a constructor get called, therefore we initialized the props in it.
+
+          Same way we'll set state in constructor.
+
+          this.state is a big object contain all state variables. 
+          this.state ={
+            count : 0 ,
+            count1 : 1 ,
+        } ;
 
 
 

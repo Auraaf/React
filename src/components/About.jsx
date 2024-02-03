@@ -6,9 +6,9 @@ const About = () => {
         <div className="about">
             <h1> About page</h1>
             <h3> Learning React</h3>
-            <User name = 'Azeez function'/>
+            <User name = {'Azeez function'}/>
 
-            <UserClass name = 'Azeez Class' />
+            <UserClass name = {'Azeez Class'} />
         </div>
     ) ;
 } ;
