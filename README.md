@@ -379,7 +379,11 @@ part 4 : React Component
 
           E7P5 : Dynamic routing, when you click on any restaurant page it'll open it's page.
 
+          Promise : js object represent the completion or failure of asynchronous call.
+          pending, fullfiled, rejected. are three state.
+
           pitfall- using extension .js leads to parcel bundle issue.
+          pitfall- not using await with data.json()
           pitfall- async function fetchMenu() {
                 
                 const data = await fetch (swiggy_menu_url + resId) ;  
@@ -397,6 +401,43 @@ part 4 : React Component
             catch(err){
                 console.log(err);
             }
+------------------------------------------------------------------------------------------------------------------------
+
+          E8P1: Class based component:
+          It's js class which has a render method which returns piece of jsx.
+          In functional component it's the js function which return piece of jsx.
+
+          class UserClass extends React.Component{
+               constructor(props){
+                  super(props) ;
+              }
+              render(){
+                return (
+                  <div>
+                      <div className="user-card">
+                          <h3>Name : {this.props.name}</h3>
+                          <h4>Sde-1</h4>
+                      </div>
+                  </div>
+                ) ; 
+              }
+          };
+
+          error faced:Expected content key 7b8ccf7407a95f40 to exist getting error while creatingclass based component in react. 
+
+          Delete .parcel-cache and rebuild the project
+
+
+          Passing props is same as function but receiving the props is different in class based component,
+          Steps reuired for props: 
+          1. Create parameterized constructor
+          2. Then use super command, why props required.
+          3. Now you can anywhere call your props using this.props.name
+
+
+
+
+
 
 
 
