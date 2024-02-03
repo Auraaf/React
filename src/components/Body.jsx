@@ -7,6 +7,7 @@ import restaurantList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 //{} used here for destucturing the object.
 import { swiggy_api_URL  , swiggy_api_URL_main} from "../utils/constants"; // name should be same to property need to be extrtacted.
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -96,7 +97,11 @@ const Body = () => {
                     filteredRestaurants.map ( (restaurant , index)  => {
                         
                         return (
-                            <ResCard key = {restaurant.info.id}  restData =  {restaurant.info} />
+                            /** Here we're setting value in resId */
+                            <Link to = {"/restaurant/" + restaurant.info.id }  key = {restaurant.info.id} >
+                            <ResCard  restData =  {restaurant.info} />
+                            </Link>
+                            
                         )
                     } )
                 }

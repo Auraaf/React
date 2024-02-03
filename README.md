@@ -371,7 +371,35 @@ part 4 : React Component
 
           Link to object is there provided by react-router-dom it'll change the pafe without even refreshing the whole page.
 
-          <li> <Link to ='contact' > Contact us </Link> </li>
+          <li> <Link to ='contact' > Contact us </Link> </li> 
+
+          This is the reason react is called Single page application as they have client side routing.
+          Client side routing, component getting interchanged, not making any network call.
+          Server side routing make network call gets the data and render the page
+
+          E7P5 : Dynamic routing, when you click on any restaurant page it'll open it's page.
+
+          pitfall- using extension .js leads to parcel bundle issue.
+          pitfall- async function fetchMenu() {
+                
+                const data = await fetch (swiggy_menu_url + resId) ;  
+                setMenu[data];  
+            }  ;  this didn't work no data is getting fethced 
+
+          ------> with try catch it work  (*****why****)
+          try{
+            const data = await fetch (swiggy_menu_url + resId) ; 
+            const datajson = data.json() ; 
+            console.log(datajson);
+            setMenu[datajson];
+
+            }
+            catch(err){
+                console.log(err);
+            }
+
+
+
 
 
 

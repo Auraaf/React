@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import About from "./components/About";
-import RestMenu from "./components/RestMenu";
+import RestMenu from "./components/RestMenu.jsx";
 import { CDN_URL } from "./utils/constants";
 import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
@@ -187,7 +187,9 @@ const appRouter = createBrowserRouter([
         element: <Contact /> ,
       },
       {
-        path:"/menu/:resId",
+        /** Dynamic id resId is get attached */
+        /** Here we declared i.e. resId is dynamic */
+        path:"/restaurant/:resId",
         element: <RestMenu />,
       }
 
