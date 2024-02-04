@@ -488,9 +488,30 @@ part 4 : React Component
            Child render
            Child component did mount  
 
-           Significance of componentDidMount is mainly in api calls, relate with useEffect() in functional component
-           
 
+          E8P5 : React children life cycle, render and commit phase
+           Significance of componentDidMount is mainly in api calls, relate with useEffect() in functional component
+           this hook get called once component is loaded, similary componentDidMount() in itself says like is component
+           mount done.
+
+           ![Alt text](<Screenshot 2024-02-04 at 10.38.04 AM.png>)
+
+           React has two phases :
+           1. Render phase  : calls constructor and render
+           2. Commit phase  : react update Dom 
+
+          So for two child react first patch two childs in render phase, now DOM changes happens in 
+          commit phase which updates the dom based on, to makeit easy to learn react consider two child get as single component into one, this is the optimization react performs.
+           
+          Link to see react lifecycle diagram:
+           https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+           Reason React  patches child component 
+
+          DOM Manipulation update is most expensive task, so it'll get done in single go where it's possible
+          like in two childs components that's in commit phase.
+          All changes get added in render phases by patchin 
+
+          
           
 
 
