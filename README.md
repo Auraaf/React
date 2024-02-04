@@ -496,7 +496,7 @@ part 4 : React Component
 
            
            ![Alt text](LifeCycleChildReact.png)
-           <img src = "LifeCycleChildReact.png" width:"30px" height:"40px" />
+           <img src = "./LifeCycleChildReact.png" width:"30px" height:"40px" />
 
            React has two phases :
            1. Render phase  : calls constructor and render
