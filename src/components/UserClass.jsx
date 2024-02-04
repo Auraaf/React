@@ -8,8 +8,14 @@ class UserClass extends React.Component{
             count : 0 ,
             count1 : 1 
         } ;
+        console.log("Child constructor");
     }
+
+    componentDidMount(){
+        console.log("Child component did mount")
+    };
     render(){
+        console.log("Child render")
         const {name} = this.props;
         //object destucturing of state variable.
         const {count , count1} = this.state;

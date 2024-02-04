@@ -449,6 +449,55 @@ part 4 : React Component
             count1 : 1 ,
         } ;
 
+          E8P3 : Updating state variable 
+          *** Never update the state variable directly.
+
+          this.setState({
+                            count : this.state.count + 1
+                        })  
+          take object as an argument, and it'll only update mentioned state variable whereas other variable
+          in state remain untouched.
+
+          E8P4 : Loading or Mounting the component.
+
+          Life cycle of react component: When you instantiated the react component i.e. calling component in 
+          parent component for eg : <UserClass />  Three main function inside the UserClass will get called in this order.
+          /*******************************/
+            1. constructor get called.
+            2. render get called.
+            3. Then componentDidMount get called
+
+          constructor(props){
+                super(props) ;
+                this.state ={
+                    count : 0 ,
+                    count1 : 1 
+                } ;
+                console.log("Child cnt");
+            }
+
+            componentDidMount(){
+                console.log("Child component did mount")
+            };
+            render(){
+                console.log("Child render") }
+
+
+           o/p : 
+           Child constructor
+           Child render
+           Child component did mount  
+
+           Significance of componentDidMount is mainly in api calls, relate with useEffect() in functional component
+           
+
+          
+
+
+              
+          
+
+
 
 
 
