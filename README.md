@@ -494,7 +494,9 @@ part 4 : React Component
            this hook get called once component is loaded, similary componentDidMount() in itself says like is component
            mount done.
 
-           ![Alt text](<Screenshot 2024-02-04 at 10.38.04 AM.png>)
+           
+           ![Alt text](LifeCycleChildReact.png)
+           <img src = "LifeCycleChildReact.png" width:"30px" height:"40px" />
 
            React has two phases :
            1. Render phase  : calls constructor and render
