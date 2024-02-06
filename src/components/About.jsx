@@ -23,7 +23,6 @@ class About extends React.Component{
                 {/* react bind this two child component, then first renders both of them then call component did mount
                 of each one by one */}
                 <UserClass name = {'First'} />
-                <UserClass name = {'Second'} />
                 
             </div>
         ) ;
@@ -34,16 +33,20 @@ class About extends React.Component{
 /**
  * Parent constructor
  * Parent render
+ *         2 child life cycle.
+ *         Render Phase
  *          -First Child constructor
  *          -First Child render
  * 
  *          -Second Child constructor
  *          -Second Child render
- *          <Dom Updated - In single batch>
- *              
+ * 
+ 
+          Commit phase
+ *          <Dom Updated - In single batch>  
 *           -First component did mount
             -Second component did mount
-            
+
    Parent component did mount
  *          
  *          

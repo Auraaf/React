@@ -513,6 +513,13 @@ part 4 : React Component
           like in two childs components that's in commit phase.
           All changes get added in render phases by patchin 
 
+          E8P6 : Getting api calls from git 
+
+          componentDidMount()  : Fetch calls can be done here;
+          componentDidUpdate() : have to set conditions ;
+          componentUnmount()  : use to unmount or stop the execution of some code, when route is getting chnges 
+          very important in SPA;
+
           
           
 

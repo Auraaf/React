@@ -4,41 +4,37 @@ class UserClass extends React.Component{
 
     constructor(props){
         super(props) ;
-        this.state ={
-            count : 0 ,
-            count1 : 1 
-        } ;
-        console.log(this.props.name +  "Child constructor");
-    }
 
-    componentDidMount(){
-        console.log(this.props.name + "Child component did mount")
+        this.state = {
+            name : "Dummy",
+            id : 0 ,
+        };
     };
+
+    async componentDidMount(){
+
+            const data = await fetch("https://api.github.com/users/Auraaf") ;
+            const jsonData = await data.json() ;
+            console.log(jsonData) ;
+            console.log(this.componentDidMount);
+
+            this.setState({
+                name : jsonData.login,
+                id   : jsonData.id,
+            });
+
+    };
+
     render(){
-        console.log(this.props.name + "Child render")
-        const {name} = this.props;
+
         //object destucturing of state variable.
-        const {count , count1} = this.state;
+
        return (
         <div>
             <div className="user-card">
-                <button onClick={() => {
-
-                        this.setState({
-                            count : this.state.count + 1
-                        })
-                }}   > Update count</button>
-                 <button onClick={() => {
-                    this.setState({
-                        count : this.state.count + 1 ,
-                        count1 : this.state.count1 + 1 ,
-                    });
-                 }}> Update count and count1</button>
-                <h5>count : {count}</h5>
-                <h5>count1 : {count1}</h5>
-
-                <h3>Name : {name}</h3>
-                <h4>Sde-1</h4>
+               
+                <h3>Name : {this.state.name}</h3>
+                <h4>id : {this.state.id}</h4>
             </div>
         </div>
        ) ; 
