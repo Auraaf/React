@@ -8,6 +8,7 @@ import Shimmer from "./Shimmer";
 //{} used here for destucturing the object.
 import { swiggy_api_URL  , swiggy_api_URL_main} from "../utils/constants"; // name should be same to property need to be extrtacted.
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body = () => {
@@ -67,7 +68,13 @@ const Body = () => {
       setFilteredRestaurants(restList.filter( (resData) => resData.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()   )   )) ;
     }
 
-
+    const onlineStatus = useOnlineStatus() ;
+    if (onlineStatus === false)
+    return (
+        <div>
+            <h1> Looks like your internet broken!!!!</h1>
+        </div>
+    )
   
     return restList.length === 0 ? <Shimmer /> : (
         <div className="body">

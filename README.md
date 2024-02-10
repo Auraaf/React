@@ -522,9 +522,12 @@ part 4 : React Component
 
           E9P1: 
           single responsible principle : one component shoukd have only one responsibility.
-
-          reusable, mainataninable, testable 
+          reusable, mainataninable, testable.
+          E9P2 : custom hooks, hooks are nothhing but js function. As industry standart put use before customHook.
+          for eg. useRestaurantMenu
+          E9P3: online offline feature.
           
+
 
           
           
