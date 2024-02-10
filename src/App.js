@@ -8,6 +8,7 @@ import { CDN_URL } from "./utils/constants";
 import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+
 /*
  *  Header
         - logo
@@ -26,10 +27,6 @@ import Error from "./components/Error";
         - Address
         - Contact
  */
-
-
-
-
 
 const restObj = {
     type : "restaurant" ,

@@ -517,8 +517,14 @@ part 4 : React Component
 
           componentDidMount()  : Fetch calls can be done here;
           componentDidUpdate() : have to set conditions ;
-          componentUnmount()  : use to unmount or stop the execution of some code, when route is getting chnges 
+          componentUnmount() : use to unmount or stop the execution of some code, when route is getting chnges 
           very important in SPA;
+
+          E9P1: 
+          single responsible principle : one component shoukd have only one responsibility.
+
+          reusable, mainataninable, testable 
+          
 
           
           
