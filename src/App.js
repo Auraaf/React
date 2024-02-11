@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,6 +8,10 @@ import { CDN_URL } from "./utils/constants";
 import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+//this we'll load on demand.
+// import Grocery from "./components/Grocery";
+
+const Grocery = lazy(() => import("./components/Grocery")) ;
 
 /*
  *  Header
@@ -174,6 +178,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+      },
+      {
+        path:"/grocery",
+        element: <Suspense fallback={<h1>Loading ....</h1>} ><Grocery /></Suspense> ,
       },
       {
         path: "/about",

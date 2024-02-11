@@ -511,7 +511,7 @@ part 4 : React Component
 
           DOM Manipulation update is most expensive task, so it'll get done in single go where it's possible
           like in two childs components that's in commit phase.
-          All changes get added in render phases by patchin 
+          All changes get added in render phases by patching 
 
           E8P6 : Getting api calls from git 
 
@@ -520,13 +520,30 @@ part 4 : React Component
           componentUnmount() : use to unmount or stop the execution of some code, when route is getting chnges 
           very important in SPA;
 
-          E9P1: 
+          E9P1: Optimizing app
           single responsible principle : one component shoukd have only one responsibility.
           reusable, mainataninable, testable.
           E9P2 : custom hooks, hooks are nothhing but js function. As industry standart put use before customHook.
           for eg. useRestaurantMenu
-          E9P3: online offline feature.
-          
+          E9P3-4: online offline feature.
+          Finalize input and output, 
+          Browser give capability to turn ogg internet go in network
+          E9P5: Further optimizing 
+          Chunking , code splitting, lasy loading, dynamic bundiling
+          on demand loading : 
+
+
+          import Grocery from "./components/Grocery";
+          now if you check in console index file, you'll find there's grocery component present, though on
+          home page we don't need that, so we'll do lasy loading, which is we only load grocery component 
+          when invocked.
+
+          const Grocery = lazy(() => import("./components/Grocery")) ;
+          with import using lazy like this, you'll see seperate file will get created.
+
+
+
+
 
 
           
