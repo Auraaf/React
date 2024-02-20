@@ -2,7 +2,7 @@
 // import restaurantList from "../utils/mockData" ;
 
 import { useState  , useEffect} from "react";
-import ResCard  from "./ResCard";
+import ResCard , {withPromoted}  from "./ResCard";
 import restaurantList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 //{} used here for destucturing the object.
@@ -24,6 +24,7 @@ const Body = () => {
     // when local state variable i.e. searchText get chnaged react triggeres the reconciliation cycle
     // which re renderes the whole component.
 
+    const PromotedRestaurant = withPromoted(ResCard) ;
     async function getRestaurants() {
         // handle the error using try... catch
         try {   
@@ -41,7 +42,7 @@ const Body = () => {
               //we'll keepon checking for restaurants card, if we got restaurant card we'll return that card.
               //using optional chaining.
               let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    
+                console.log(checkData);
               // if checkData is not undefined then return it 
               //if restuarant not present it'll keep on giving undefined.
               if (checkData !== undefined) {
@@ -69,6 +70,8 @@ const Body = () => {
     }
 
     const onlineStatus = useOnlineStatus() ;
+
+
     if (onlineStatus === false)
     return (
         <div>
@@ -106,7 +109,18 @@ const Body = () => {
                         return (
                             /** Here we're setting value in resId */
                             <Link to = {"/restaurant/" + restaurant.info.id }  key = {restaurant.info.id} >
-                            <ResCard  restData =  {restaurant.info} />
+
+                            {/* {  restaurant.info.avgRating >= 2 ? (
+                                <PromotedRestaurant resData = {restaurant.info} />
+                                ) : (  
+                                <ResCard  restData =  {restaurant.info} />)
+                            } */}
+                            {
+                                restaurant.info.id % 2 ?
+                                <PromotedRestaurant  restData =  {restaurant.info} />
+                                : <ResCard  restData =  {restaurant.info} />
+                            }
+                            
                             </Link>
                             
                         )

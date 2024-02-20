@@ -517,7 +517,7 @@ part 4 : React Component
 
           componentDidMount()  : Fetch calls can be done here;
           componentDidUpdate() : have to set conditions ;
-          componentUnmount() : use to unmount or stop the execution of some code, when route is getting chnges 
+          componentUnmount() : use to unmount or stop the execution of some code, when route is getting changes 
           very important in SPA;
 
           E9P1: Optimizing app
@@ -529,9 +529,8 @@ part 4 : React Component
           Finalize input and output, 
           Browser give capability to turn ogg internet go in network
           E9P5: Further optimizing 
-          Chunking , code splitting, lasy loading, dynamic bundiling
+          Chunking , code splitting, lasy loading, dynamic bundling
           on demand loading : 
-
 
           import Grocery from "./components/Grocery";
           now if you check in console index file, you'll find there's grocery component present, though on
@@ -540,6 +539,13 @@ part 4 : React Component
 
           const Grocery = lazy(() => import("./components/Grocery")) ;
           with import using lazy like this, you'll see seperate file will get created.
+
+
+          E11P1 : High order component
+          takes the compnent tweak it and return the component. And won
+
+
+
 
 
 

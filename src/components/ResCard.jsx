@@ -18,4 +18,17 @@ const ResCard = (props) => {
     ) ;
 } ;
 
+export const withPromoted = (ResCard) => {
+    return (props)=>{
+        return (
+            <div>
+                {console.log('In new restaurant')}
+                <label>Highly Rated</label>
+                <ResCard {...props}/>
+            </div>
+        )
+    };
+};
+
+
 export default ResCard ;

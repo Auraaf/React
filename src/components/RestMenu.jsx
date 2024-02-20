@@ -8,6 +8,7 @@ const RestMenu = () => {
     //object destucturing
     const {resId}= useParams() ;
     restaurant = useRestaurantMenu(resId) ;
+    console.log(restaurant);
 
     // await is used to pause the execution till promise get settled, as fetch return promise.
     // also .json() return promise that's to parse data into json, so it's important to ensure the 
