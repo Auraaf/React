@@ -8,6 +8,7 @@ const RestMenu = () => {
     //object destucturing
     const {resId}= useParams() ;
     restaurant = useRestaurantMenu(resId) ;
+    
     console.log(restaurant);
 
     // await is used to pause the execution till promise get settled, as fetch return promise.
@@ -19,6 +20,21 @@ const RestMenu = () => {
             <h1>
             {restaurant?.name}
             </h1>
+            <div className="RestMenu">
+                {
+                    restaurant?.cuisines.map((cuisine, index) => {
+                        return(  <div className="menu-items">
+                            <h4>
+                                {cuisine}
+                            </h4>
+                        </div> )
+                    })
+
+                }
+
+            </div>
+
+
         </div>
     );
 };

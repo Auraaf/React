@@ -110,19 +110,13 @@ const Body = () => {
                             /** Here we're setting value in resId */
                             <Link to = {"/restaurant/" + restaurant.info.id }  key = {restaurant.info.id} >
 
-                            {/* {  restaurant.info.avgRating >= 2 ? (
-                                <PromotedRestaurant resData = {restaurant.info} />
-                                ) : (  
-                                <ResCard  restData =  {restaurant.info} />)
-                            } */}
                             {
                                 restaurant.info.id % 2 ?
                                 <PromotedRestaurant  restData =  {restaurant.info} />
                                 : <ResCard  restData =  {restaurant.info} />
                             }
                             
-                            </Link>
-                            
+                            </Link>             
                         )
                     } )
                 }

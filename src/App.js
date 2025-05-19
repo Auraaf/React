@@ -8,6 +8,8 @@ import { CDN_URL } from "./utils/constants";
 import { RouterProvider, createBrowserRouter , Outlet} from "react-router-dom";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import { Provider } from "react-redux";
+import appStore from "./utils/appstore";
 //this we'll load on demand.
 // import Grocery from "./components/Grocery";
 
@@ -156,7 +158,8 @@ const restObj = {
 
 const AppLayout = () => {
     return (
-        <div className="app">
+        <Provider store={appStore}>
+          <div className="app">
             <Header/>
 
               {/* if route '/' show body */}
@@ -165,6 +168,9 @@ const AppLayout = () => {
               {/** this Outlet component renderes based on route as Outlet get replaced by main component */}
            <Outlet />
         </div>
+
+        </Provider>
+        
     )
 }
 

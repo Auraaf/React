@@ -12,6 +12,7 @@ const useRestaurantMenu = (resId) => {
 
     const fetchData = async () => {
         const data = await fetch(swiggy_menu_url + resId) ;
+        console.log(data);
         const datajson = await data.json() ;
         const restaurantData = datajson?.data?.cards?.map(x => x.card)?.
                              find(x => x && x.card['@type'] === RESTAURANT_TYPE_KEY)?.card?.info || null;

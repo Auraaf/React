@@ -2,6 +2,7 @@ import { LOGO_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { Selector, useSelector } from "react-redux";
 const Header = () => {
 
     //add stateVariable and function, 
@@ -16,6 +17,8 @@ const Header = () => {
     cardValue = () => {
 
     }
+
+    const cartItems = useSelector((store) => store.cart.items);
 
     /*useEffect( () => {
  
@@ -42,7 +45,7 @@ const Header = () => {
                     <li><Link to = 'grocery'>Grocery</Link></li>
                     <li> <Link to ='about' >About us</Link></li>   
                     <li> <Link to ='contact' > Contact us </Link> </li>
-                    <li>Cart</li>   
+                    <li>Cart - {cartItems.length}</li>   
                     <button className="login" onClick={changeBtnValue}> {btnValue} </button>         
                 </ul>
                 

@@ -16,14 +16,14 @@ Ep 2 : Igniting our app
 - differential bundling - to support older brwoser like running it in mozilla, 
 - error handling
 - Https
-- Tree shaking - remove unsed code from app
+- Tree shaking - remove unused code from app
 - 
 - ***** https://parceljs.org/
 - Different dev and prod bundles 
 - Now try to run "npx parcel build index.html" you will get into error because in package.json main is set as entry point 
   remove it.
 
-  dist folder usage when we ran above build command then parcel do all the crazy stuff written abovw and put it in dist folder.
+  dist folder usage when we ran above build command then parcel do all the crazy stuff written above and put it in dist folder.
  *** it'll give you one .html and .css and .js file containing all the production ready code .
 
 
@@ -106,7 +106,7 @@ part 4 : React Component
 
   E3P5 : How to put element inside component  
          you can write all js in this {}  if you're inside any component,
-         All react element aka jsx is JS oobject we can use it isnide this { title }  ;
+         All react element aka jsx is JS object we can use it inside this { title }  ;
 
          Cross site scritping is handled by {}, malicious attack will get santised inside the curly braces {}
 
@@ -540,9 +540,145 @@ part 4 : React Component
           const Grocery = lazy(() => import("./components/Grocery")) ;
           with import using lazy like this, you'll see seperate file will get created.
 
-
+------------------------------------------------------------------------------------------------------------------------
           E11P1 : High order component
           takes the compnent tweak it and return the component. And won
+          Pure function : Real structure of function aka component isn'tgetting changed.
+
+          Look to the function of with Promoted, how to pass props with return functionality
+
+
+          React dev tools extensions 
+          E11P2 : Controlled and uncontrolled 
+
+          collapse all items cards when other one is open
+
+
+          Ui + Data layer => React Application
+          UI latyer is powerd by data layer 
+          Ui layer : jsx code 
+          Data layer : props, state, { js in UI layer}
+
+          Mangaging data layer 
+
+          To lift the state of a component up, rn Restaurant Category control toggle open and close, but now I want 
+          RestaurantMenu to control the state of each RestaurantCatgory so that when one is open oter gt collpased.
+
+          Controlled and Uncontrolled component  Now restaurant category is controlled by restaurant menu by state 
+
+          lifting the state up 
+          
+          ResterantMenu.jsx: 
+
+          categories = restData.filter( c => c.card?.card?.["@type"] === ""itemCategpry);
+          const [showIndex , setShowIndex] = useState(false) ;
+          return(
+            <div>
+                {/*categories*/}
+                categories.map( (category) => {
+
+                  //controlled component
+                   <RestaurantCategory data = {caterogy?.card?.card} 
+                   showItem = (index == showIndex ? true :false )
+                   setShowIndex = { () => setShowIndex(index)} />
+                })
+                
+            <div>
+          )
+
+
+          RestaurantCategory.jsx
+
+          const RestaurantCategory = ({data  , setShowIndex}) => {
+
+            cosnt [showItems , setShowItems] = useState(false) ;
+
+            const handleCLick() => {
+                setShowIndex() ;
+            }
+
+            return (
+            <div>
+                <div className= Header onClick = {handleClick()} >
+                   
+                </div>
+                ResCategory
+                <ItemList item = {data.itemCards}/>
+            <div>
+            )
+          }
+
+          export default RestaurantCategory
+
+
+          ItemList.jsx 
+
+          const ItemList = (items) => {
+              return (
+                <div>
+
+                </div>
+              )
+          }
+
+          export default
+
+
+          props drilling one way data streams in React 
+
+          passing props form parents to childs 
+          React context : to avoid props drilling
+
+          User Context : keep info about logged in user 
+          createCOntext in config file
+
+          cosnt data = useContext(UserContext);  
+
+          const {loggedInUser} = 
+
+          createContext({
+
+          })
+
+          hooks we can't used in class based component 
+          cconsume context in class based component
+
+          provider to update the data value 
+
+
+          Ep -12 Redux : It can work seperately 
+          react-redux is bridge between react and redux.
+          Redux toolkit - new way of writting redux
+          https://redux-toolkit.js.org/introduction/getting-started
+
+          architecture of rtk : 
+          Feature to add a item in a cart.
+          For that we'll be using redux store 
+
+
+         -Install @reduxjs/toolkit and react-redux 
+         -Build our redux store  (where we can have slice and put data in it)
+         -Connect our store to app
+         -Slice (cartSlice)
+         -Dispatch(action)
+         -Selector(subscibe element to a slice)
+
+
+         Let's try to read the cart value, i.e we've subscribred our cart's component
+         with cartSLice redux store, once this store get updated it'll reflect the value
+         in the cart component.
+
+         After doing the setup of store and slice, we need to use selector inside header 
+         component i.e where cart component is located.
+         Selector is nothing but a hook inside react-redux.
+
+
+            
+
+
+        
+
+
 
 
 
