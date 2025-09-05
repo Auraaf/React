@@ -7,6 +7,7 @@ import cartSlice from "./cartSlice";
 const appStore = configureStore({
     reducer : {
         cart: cartReducers,
+        djfds
     },
 }) ;
 export default appStore ;
